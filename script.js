@@ -79,6 +79,7 @@ const semestres = {
     { id: "administracion_salud", nombre: "Administración en salud", prereq: "administracion_basica" }
   ]
 };
+
 function crearMalla() {
   const grid = document.querySelector('.grid');
   for (const [semestre, ramos] of Object.entries(semestres)) {
