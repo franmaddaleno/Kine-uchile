@@ -1,12 +1,12 @@
 body {
   font-family: Arial, sans-serif;
-  background: #e3f2fd; /* azul claro */
+  background: #e3f2fd; 
   padding: 20px;
   text-align: center;
 }
 
 h1 {
-  color: #1565c0; /* azul oscuro */
+  color: #1565c0;
 }
 
 .grid {
@@ -17,8 +17,8 @@ h1 {
 }
 
 .semestre {
-  border: 2px solid #90caf9; /* azul intermedio */
-  background: #e1f5fe; /* fondo de la caja */
+  border: 2px solid #90caf9; 
+  background: #e1f5fe; 
   padding: 10px;
   border-radius: 10px;
   width: 280px;
@@ -26,13 +26,13 @@ h1 {
 
 .semestre h2 {
   margin-top: 0;
-  color: #1976d2; /* azul encabezado semestre */
+  color: #1976d2; 
 }
 
 .ramo {
   margin: 5px 0;
   padding: 8px;
-  background: #64b5f6; /* azul botones ramos */
+  background: #64b5f6; 
   color: white;
   border-radius: 6px;
   cursor: pointer;
@@ -40,17 +40,17 @@ h1 {
 }
 
 .ramo:hover {
-  background: #42a5f5; /* azul más intenso al pasar el mouse */
+  background: #42a5f5; 
 }
 
 .ramo.aprobado {
-  background: #1e88e5; /* azul más oscuro */
+  background: #1e88e5; 
   text-decoration: line-through;
   color: #fff;
 }
 
 .ramo.locked {
-  background: #b0bec5; /* gris azulado para bloqueado */
+  background: #b0bec5; 
   cursor: not-allowed;
   pointer-events: none;
   color: #eceff1;
