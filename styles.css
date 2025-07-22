@@ -1,1 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #e3f2fd; /* azul claro de fondo */
+  padding: 20px;
+  text-align: center;
+}
+h1 {
+  color: #1565c0; /* azul fuerte para el título */
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.semestre {
+  border: 2px solid #90caf9; /* borde azul claro */
+  background: #e3f2fd; /* fondo de los semestres */
+  padding: 10px;
+  border-radius: 10px;
+  width: 280px;
+}
+.semestre h2 {
+  margin-top: 0;
+  color: #1976d2;
+}
+.ramo {
+  margin: 5px 0;
+  padding: 8px;
+  background: #90caf9; /* azul medio para ramos no aprobados */
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #0d47a1;
+}
+.ramo.aprobado {
+  background: #5c6bc0; /* azul más fuerte para ramos aprobados */
+  text-decoration: line-through;
+  color: white;
+}
+.ramo.locked {
+  background: #cfd8dc; /* gris azulado para ramos bloqueados */
+  color: #546e7a;
+  cursor: not-allowed;
+  pointer-events: none;
+}
 
