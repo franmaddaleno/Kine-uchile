@@ -1,85 +1,80 @@
 const semestres = {
   "1° Semestre": [
-    { id: "quimica_biologia", nombre: "Bases Integradas de Química, Bioquímica, Biología Celular y Genética" },
+    { id: "quimica", nombre: "Bases Integradas de Química, Bioquímica, Biología Celular y Genética" },
     { id: "anatomia1", nombre: "Anatomía estructural y funcional I" },
     { id: "estructura_tisular", nombre: "Estructura y función tisular" },
-    { id: "bibliografia", nombre: "Estrategias de Búsqueda Bibliográfica" },
+    { id: "busqueda_biblio", nombre: "Estrategias de Búsqueda Bibliográfica" },
     { id: "intro_kine", nombre: "Introducción a la Kinesiología" },
     { id: "fisica", nombre: "Física" }
   ],
   "2° Semestre": [
     { id: "biomecanica", nombre: "Biomecánica, Lesión y Reparación Tisular" },
-    { id: "mov_humano", nombre: "Introducción al Estudio del Movimiento Humano" },
+    { id: "movimiento_humano", nombre: "Introducción al Estudio del Movimiento Humano" },
     { id: "evolucion", nombre: "Principios de Evolución" },
     { id: "lectura_cientifica", nombre: "Lectura Comprensiva de Artículos Científicos" },
-    { id: "fisiologia_general", nombre: "Fisiología general", prereq: "fisica" },
-    { id: "neuroanatomia", nombre: "Neuroanatomia" }
+    { id: "fisiologia_gral", nombre: "Fisiología general", prereq: "fisica" },
+    { id: "neuroanato", nombre: "Neuroanatomía" }
   ],
   "3° Semestre": [
-    { id: "fisiologia_sistemas", nombre: "Fisiología de sistemas", prereq: "fisiologia_general" },
-    { id: "infectologia", nombre: "Bases Integradas de Infectología, Inmunología y Farmacología General", prereq: "fisiologia_general" },
-    { id: "examen_kinesico", nombre: "Examen Kinésico Básico", prereq: "biomecanica" },
+    { id: "fisiologia_sistemas", nombre: "Fisiología de sistemas", prereq: "neuroanato" },
+    { id: "infectologia", nombre: "Bases Integradas de Infectología, Inmunología y Farmacología General", prereq: "neuroanato" },
+    { id: "examen_kinesico", nombre: "Examen Kinésico Básico", prereq: "anatomia1" },
     { id: "control_motor", nombre: "Control y Aprendizaje Motor" },
-    { id: "investigacion1", nombre: "Fundamentos de la Investigación Científica" },
+    { id: "investigacion", nombre: "Fundamentos de la Investigación Científica" },
     { id: "educ_fisica1", nombre: "Educación física I" }
   ],
   "4° Semestre": [
     { id: "fisiopato", nombre: "Fisiopatología y Farmacología de Sistemas", prereq: "fisiologia_sistemas" },
-    { id: "examen_condicion", nombre: "Examen de la Condición Física y la Conducta Motora", prereq: "examen_kinesico" },
-    { id: "procedimientos", nombre: "Procedimientos Terapéuticos Básicos y Generales", prereq: "examen_kinesico" },
+    { id: "examen_cond_fisica", nombre: "Examen de la Condición Física y la Conducta Motora", prereq: "examen_kinesico" },
+    { id: "proc_terapeuticos", nombre: "Procedimientos Terapéuticos Básicos y Generales", prereq: "movimiento_humano" },
     { id: "desarrollo_psicomotor", nombre: "Kinesiología del Desarrollo Psicomotor", prereq: "control_motor" },
     { id: "bioinstrumental", nombre: "Análisis Bioinstrumental del Movimiento Humano" },
-    { id: "lectura_critica", nombre: "Lectura Crítica de Artículos Científicos" },
+    { id: "lectura_critica", nombre: "Lectura Crítica de Artículos Científico" },
     { id: "epidemiologia", nombre: "Análisis Epidemiológico" }
-  ]  "5° Semestre": [
+  ],
+  "5° Semestre": [
     { id: "actividad_salud", nombre: "Efectos de Actividad Física en la Salud", prereq: "fisiopato" },
     { id: "neurokine1", nombre: "Evaluación e Intervención en Neurokinesiología I", prereq: "desarrollo_psicomotor" },
     { id: "respiratorio1", nombre: "Evaluación e Intervención en Cuidados Respiratorios I", prereq: "fisiopato" },
-    { id: "musculoesqueletico1", nombre: "Evaluación e Intervención en Musculoesquelético I", prereq: "procedimientos" },
-    { id: "revision_bibliografica", nombre: "Revisión Bibliográfica", prereq: "lectura_critica" },
+    { id: "musculoesq1", nombre: "Evaluación e Intervención en Musculoesquelético I", prereq: "proc_terapeuticos" },
+    { id: "rev_biblio", nombre: "Revisión Bibliográfica", prereq: "lectura_critica" },
     { id: "modelo_salud", nombre: "Análisis del Modelo de Salud Chileno", prereq: "epidemiologia" },
     { id: "educ_fisica2", nombre: "Educación Física II", prereq: "educ_fisica1" },
-    { id: "modulo_integrado1", nombre: "Modulo Integrado Interdisciplinario y Multiprofesional I" }
+    { id: "modulo_i", nombre: "Módulo Integrado Interdisciplinario y Multiprofesional I" }
   ],
   "6° Semestre": [
     { id: "neurokine2", nombre: "Evaluación e Intervención en Neurokinesiología II", prereq: "neurokine1" },
     { id: "respiratorio2", nombre: "Evaluación e Intervención en Cuidados Respiratorios II", prereq: "respiratorio1" },
-    { id: "musculoesqueletico2", nombre: "Evaluación e Intervención en Músculoesquelético II", prereq: "musculoesqueletico1" },
-    { id: "razonamiento_clinico", nombre: "Razonamiento Clínico", prereq: "respiratorio1" },
-    { id: "proyectos_investigacion", nombre: "Diseño y Formulación de Proyectos de Investigación", prereq: "revision_bibliografica" },
-    { id: "ejercicio_profesional", nombre: "Responsabilidad del Ejercicio Profesional" },
+    { id: "musculoesq2", nombre: "Evaluación e Intervención en Músculo-esquelético II", prereq: "musculoesq1" },
+    { id: "razonamiento", nombre: "Razonamiento Clínico", prereq: "neurokine1" },
+    { id: "diseno_proyecto", nombre: "Diseño y Formulación de Proyectos de Investigación", prereq: "rev_biblio" },
+    { id: "responsabilidad", nombre: "Responsabilidad del Ejercicio Profesional" },
     { id: "actividad_deporte", nombre: "Actividad Física y Deportes", prereq: "actividad_salud" }
   ],
   "7° Semestre": [
-    { id: "intervencion_contexto1", nombre: "Intervención Profesional en Contexto I", prereq: "musculoesqueletico2" },
-    { id: "estrategias_deportivas", nombre: "Estrategias Deportivas y Recreativas", prereq: "actividad_deporte" },
-    { id: "relacion_entorno", nombre: "Análisis de la Relación Persona Entorno", prereq: "musculoesqueletico2" },
-    { id: "determinantes_salud", nombre: "Determinantes Sociales de la Salud", prereq: "modelo_salud" },
-    { id: "ejecucion_proyectos1", nombre: "Ejecución de Proyectos de Investigación I", prereq: "proyectos_investigacion" },
-    { id: "administracion_basica", nombre: "Conceptos Básicos de Administración en Salud", prereq: "modelo_salud" },
-    { id: "metodologias_ensenanza", nombre: "Metodologías de Enseñanza Aprendizaje" }
+    { id: "integra1", nombre: "Integrado Clínico en Kinesiología I", prereq: "musculoesq2" },
+    { id: "actividad_fisica_pob", nombre: "Actividad Física en Poblaciones Especiales", prereq: "actividad_deporte" },
+    { id: "educacion_salud", nombre: "Educación para la Salud", prereq: "modelo_salud" },
+    { id: "metodologia_cualitativa", nombre: "Metodología de Investigación Cualitativa", prereq: "diseno_proyecto" },
+    { id: "gestion_servicios", nombre: "Gestión de Servicios de Salud", prereq: "modelo_salud" },
+    { id: "modulo_ii", nombre: "Módulo Integrado Interdisciplinario y Multiprofesional II", prereq: "modulo_i" }
   ],
   "8° Semestre": [
-    { id: "intervencion_contexto2", nombre: "Intervención Profesional en Contexto II", prereq: "intervencion_contexto1" },
-    { id: "estrategias_aplicadas", nombre: "Estrategias Deportivas y Recreativas Aplicadas", prereq: "estrategias_deportivas" },
-    { id: "evaluacion_ergonomica", nombre: "Evaluación Ergonómica", prereq: "relacion_entorno" },
-    { id: "programas_salud", nombre: "Programas de Promoción y Prevención en Salud", prereq: "determinantes_salud" },
-    { id: "ejecucion_proyectos2", nombre: "Ejecución de Proyectos de Investigación II", prereq: "ejecucion_proyectos1" },
-    { id: "emprendimiento", nombre: "Proyectos de Emprendimiento", prereq: "administracion_basica" },
-    { id: "metodologias_docentes", nombre: "Aplicación Básica de Metodologías Docentes", prereq: "metodologias_ensenanza" },
-    { id: "modulo_integrado2", nombre: "Modulo Integrado Interdisciplinario y Multiprofesional II", prereq: "modulo_integrado1" }
+    { id: "integra2", nombre: "Integrado Clínico en Kinesiología II", prereq: "integra1" },
+    { id: "promocion_salud", nombre: "Promoción de la Actividad Física y Estilos de Vida Saludables", prereq: "actividad_fisica_pob" },
+    { id: "evaluacion_programas", nombre: "Evaluación de Programas", prereq: "gestion_servicios" },
+    { id: "proyecto1", nombre: "Proyecto de Título I", prereq: "metodologia_cualitativa" }
   ],
-  "9° y 10° Semestre": [
-    { id: "intervencion1", nombre: "Intervención Profesional I", prereq: "intervencion_contexto2" },
-    { id: "intervencion2", nombre: "Intervención Profesional II", prereq: "intervencion1" },
-    { id: "intervencion_ergonomica", nombre: "Proyectos de Intervención Ergonómica", prereq: "evaluacion_ergonomica" },
-    { id: "salud_comunitaria", nombre: "Intervención en Salud Comunitaria", prereq: "programas_salud" },
-    { id: "profundizacion", nombre: "Cursos de Profundización Disciplinar y Profesional", prereq: "intervencion_contexto2" },
-    { id: "comunicacion_cientifica", nombre: "Comunicación Científica", prereq: "ejecucion_proyectos2" },
-    { id: "administracion_salud", nombre: "Administración en salud", prereq: "administracion_basica" }
+  "9° Semestre": [
+    { id: "internado1", nombre: "Internado I", prereq: "integra2" },
+    { id: "seminario1", nombre: "Seminario de Título I", prereq: "proyecto1" }
+  ],
+  "10° Semestre": [
+    { id: "internado2", nombre: "Internado II", prereq: "internado1" },
+    { id: "seminario2", nombre: "Seminario de Título II", prereq: "seminario1" }
   ]
 };
-
+// FUNCIÓN PARA CREAR LA MALLA EN PANTALLA
 function crearMalla() {
   const grid = document.querySelector('.grid');
   for (const [semestre, ramos] of Object.entries(semestres)) {
@@ -101,6 +96,7 @@ function crearMalla() {
   }
 }
 
+// FUNCIÓN PARA MARCAR O DESMARCAR UN RAMO
 function marcarDesmarcar(ramo) {
   if (ramo.classList.contains('aprobado')) {
     ramo.classList.remove('aprobado');
@@ -111,29 +107,11 @@ function marcarDesmarcar(ramo) {
   }
 }
 
+// FUNCIÓN PARA DESBLOQUEAR RAMOS CON PRERREQUISITOS CUMPLIDOS
 function desbloquearRamos() {
   document.querySelectorAll('.ramo.locked').forEach(ramo => {
     const prereq = ramo.dataset.prerq;
     if (localStorage.getItem(prereq) === 'aprobado') {
       ramo.classList.remove('locked');
-      ramo.style.background = '#f8bbd0';
-      ramo.style.cursor = 'pointer';
-    }
-  });
-}
+      ramo.style.background =
 
-document.addEventListener('DOMContentLoaded', () => {
-  crearMalla();
-  document.querySelectorAll('.ramo').forEach(ramo => {
-    if (localStorage.getItem(ramo.dataset.id) === 'aprobado') {
-      ramo.classList.add('aprobado');
-    }
-    ramo.addEventListener('click', () => {
-      if (!ramo.classList.contains('locked')) {
-        marcarDesmarcar(ramo);
-        desbloquearRamos();
-      }
-    });
-  });
-  desbloquearRamos();
-});
