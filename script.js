@@ -46,7 +46,7 @@ const semestres = {
     { id: "neurokine2", nombre: "Evaluación e Intervención en Neurokinesiología II", prereq: "neurokine1" },
     { id: "respiratorio2", nombre: "Evaluación e Intervención en Cuidados Respiratorios II", prereq: "respiratorio1" },
     { id: "musculoesq2", nombre: "Evaluación e Intervención en Músculo-esquelético II", prereq: "musculoesq1" },
-    { id: "razonamiento", nombre: "Razonamiento Clínico", prereq: "neurokine1", "respiratorio1", "musculoesq1" },
+    { id: "razonamiento", nombre: "Razonamiento Clínico", prereq: ["neurokine1", "respiratorio1", "musculoesq1"] },
     { id: "diseno_proyecto", nombre: "Diseño y Formulación de Proyectos de Investigación", prereq: "rev_biblio" },
     { id: "responsabilidad", nombre: "Responsabilidad del Ejercicio Profesional" },
     { id: "actividad_deporte", nombre: "Actividad Física y Deportes", prereq: "actividad_salud" }
