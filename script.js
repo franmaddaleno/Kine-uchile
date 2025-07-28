@@ -82,7 +82,7 @@ const semestres = {
     { id: "intervencion4", nombre: "Intervención Profesional II", prereq: ["intervencion3"] }
   ]
 };
-// FUNCIÓN PARA CREAR LA MALLA EN PANTALLA
+
 function crearMalla() {
   const grid = document.querySelector('.grid');
   for (const [semestre, ramos] of Object.entries(semestres)) {
@@ -104,7 +104,6 @@ function crearMalla() {
   }
 }
 
-// FUNCIÓN PARA MARCAR O DESMARCAR UN RAMO
 function marcarDesmarcar(ramo) {
   if (ramo.classList.contains('aprobado')) {
     ramo.classList.remove('aprobado');
@@ -115,7 +114,6 @@ function marcarDesmarcar(ramo) {
   }
 }
 
-// FUNCIÓN PARA DESBLOQUEAR RAMOS CON PRERREQUISITOS CUMPLIDOS
 function desbloquearRamos() {
   document.querySelectorAll('.ramo.locked').forEach(ramo => {
     const prereq = ramo.dataset.prerq;
@@ -127,7 +125,6 @@ function desbloquearRamos() {
   });
 }
 
-// INICIALIZACIÓN CUANDO SE CARGA LA PÁGINA
 document.addEventListener('DOMContentLoaded', () => {
   crearMalla();
   document.querySelectorAll('.ramo').forEach(ramo => {
