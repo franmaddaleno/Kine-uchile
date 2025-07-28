@@ -51,27 +51,35 @@ const semestres = {
     { id: "responsabilidad", nombre: "Responsabilidad del Ejercicio Profesional" },
     { id: "actividad_deporte", nombre: "Actividad Física y Deportes", prereq: "actividad_salud" }
   ],
-  "7° Semestre": [
-    { id: "integra1", nombre: "Integrado Clínico en Kinesiología I", prereq: "musculoesq2" },
-    { id: "actividad_fisica_pob", nombre: "Actividad Física en Poblaciones Especiales", prereq: "actividad_deporte" },
-    { id: "educacion_salud", nombre: "Educación para la Salud", prereq: "modelo_salud" },
-    { id: "metodologia_cualitativa", nombre: "Metodología de Investigación Cualitativa", prereq: "diseno_proyecto" },
-    { id: "gestion_servicios", nombre: "Gestión de Servicios de Salud", prereq: "modelo_salud" },
-    { id: "modulo_ii", nombre: "Módulo Integrado Interdisciplinario y Multiprofesional II", prereq: "modulo_i" }
+    "7° Semestre": [
+    { id: "intervencion1", nombre: "Intervención Profesional en Contexto I", prereq: ["neurokine2", "respiratorio2", "musculoesq2", "actividad_salud"] },
+    { id: "estrategias_deportivas", nombre: "Estrategias Deportivas y Recreativas", prereq: ["actividad_deporte"] },
+    { id: "relacion_entorno", nombre: "Análisis de la Relación Persona Entorno", prereq: ["neurokine2", "respiratorio2", "musculoesq2"] },
+    { id: "determinantes_salud", nombre: "Determinantes Sociales de la Salud", prereq: ["modelo_salud"] },
+    { id: "ejecucion_proyecto1", nombre: "Ejecución de Proyectos de Investigación I", prereq: ["diseno_proyecto"] },
+    { id: "admin_basica", nombre: "Conceptos Básicos de Administración en Salud", prereq: ["modelo_salud"] },
+    { id: "metodologias_docentes", nombre: "Metodologías de Enseñanza Aprendizaje" }
   ],
   "8° Semestre": [
-    { id: "integra2", nombre: "Integrado Clínico en Kinesiología II", prereq: "integra1" },
-    { id: "promocion_salud", nombre: "Promoción de la Actividad Física y Estilos de Vida Saludables", prereq: "actividad_fisica_pob" },
-    { id: "evaluacion_programas", nombre: "Evaluación de Programas", prereq: "gestion_servicios" },
-    { id: "proyecto1", nombre: "Proyecto de Título I", prereq: "metodologia_cualitativa" }
+    { id: "intervencion2", nombre: "Intervención Profesional en Contexto II", prereq: ["intervencion1"] },
+    { id: "estrategias_aplicadas", nombre: "Estrategias Deportivas y Recreativas Aplicadas", prereq: ["estrategias_deportivas"] },
+    { id: "ergonomia", nombre: "Evaluación Ergonómica", prereq: ["relacion_entorno"] },
+    { id: "promocion_prevencion", nombre: "Programas de Promoción y Prevención en Salud", prereq: ["determinantes_salud"] },
+    { id: "ejecucion_proyecto2", nombre: "Ejecución de Proyectos de Investigación II", prereq: ["ejecucion_proyecto1"] },
+    { id: "emprendimiento", nombre: "Proyectos de Emprendimiento", prereq: ["admin_basica"] },
+    { id: "aplicacion_docente", nombre: "Aplicación Básica de Metodologías Docentes", prereq: ["metodologias_docentes"] },
+    { id: "modulo_ii", nombre: "Módulo Integrado Interdisciplinario y Multiprofesional II", prereq: ["modulo_i"] }
   ],
   "9° Semestre": [
-    { id: "internado1", nombre: "Internado I", prereq: "integra2" },
-    { id: "seminario1", nombre: "Seminario de Título I", prereq: "proyecto1" }
+    { id: "intervencion3", nombre: "Intervención Profesional I", prereq: ["intervencion2"] },
+    { id: "proyecto_ergonomia", nombre: "Proyectos de Intervención Ergonómica", prereq: ["ergonomia"] },
+    { id: "salud_comunitaria", nombre: "Intervención en Salud Comunitaria", prereq: ["promocion_prevencion"] },
+    { id: "profundizacion", nombre: "Cursos de Profundización Disciplinar y Profesional", prereq: ["intervencion1", "intervencion2"] },
+    { id: "comunicacion_cientifica", nombre: "Comunicación Científica", prereq: ["ejecucion_proyecto2"] },
+    { id: "admin_salud", nombre: "Administración en Salud", prereq: ["admin_basica"] }
   ],
   "10° Semestre": [
-    { id: "internado2", nombre: "Internado II", prereq: "internado1" },
-    { id: "seminario2", nombre: "Seminario de Título II", prereq: "seminario1" }
+    { id: "intervencion4", nombre: "Intervención Profesional II", prereq: ["intervencion3"] }
   ]
 };
 // FUNCIÓN PARA CREAR LA MALLA EN PANTALLA
